@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Original Challenge 4</title>
+    <style>
+    .errormsg { 
+        /*font: Use a cool Google font*/
+        color:red;
+        display:none; } 
+    </style>
+    
+<script type="text/javascript">
+    function checkForm(){
+
+        var nameerrormsg = document.getElementById('nameerrormsg');
+        var addrerrormsg = document.getElementById('addrerrormsg');
+        var address = document.getElementById('streetaddr').value
+        var name = document.getElementById('fullname').value
+        var next = true;
+
+        if (name == false){
+           next = false;
+           nameerrormsg.style.display = 'block';
+        }else{
+            nameerrormsg.style.display = 'none';
+        }
+        if (address == false){
+           next = false;
+           addrerrormsg.style.display = 'block';
+        }else {
+            addrerrormsg.style.display = 'none';
+        }
+        
+
+        return next;
+    }  
+</script>
+</head>
+<body>
+    <h1>Original Challenge 4</h1>
+    <form action="challenge5.html" onsubmit="return checkForm();">
+        <fieldset>
+        <legend>Personal details</legend>
+          <label for="fullname">Full name: </label>
+            <input type="text" name="fullname" id="fullname"><br/>
+            <p class="errormsg" id="nameerrormsg">Please enter your name above!</p>
+
+          <label for ="streetaddr"></label>
+            Street Address:
+            <input type="text" name="streetaddr" id="streetaddr">
+            <p class="errormsg" id="addrerrormsg">Please enter your street address!</p>
+        </fieldset>
+        <input type="submit" value="Submit it!"> 
+    </form>
+</body>
+</html>
